@@ -10,7 +10,9 @@ namespace DicomScu
     class DicomStoreService : DicomService, IDicomServiceProvider, IDicomCStoreProvider
     {
         public DicomStoreService(INetworkStream stream, Encoding fallbackEncoding, Logger log)
-            : base(stream, fallbackEncoding, log) { }
+            : base(stream, fallbackEncoding, log)
+        {
+        }
 
         public string AeTitle { get; set; }
 
@@ -64,9 +66,13 @@ namespace DicomScu
             return SendAssociationReleaseResponseAsync();
         }
 
-        void IDicomService.OnReceiveAbort(DicomAbortSource source, DicomAbortReason reason) { }
+        void IDicomService.OnReceiveAbort(DicomAbortSource source, DicomAbortReason reason)
+        {
+        }
 
-        void IDicomService.OnConnectionClosed(Exception exception) { }
+        void IDicomService.OnConnectionClosed(Exception exception)
+        {
+        }
 
         DicomCStoreResponse IDicomCStoreProvider.OnCStoreRequest(DicomCStoreRequest request)
         {
@@ -74,7 +80,9 @@ namespace DicomScu
             return new DicomCStoreResponse(request, status);
         }
 
-        void IDicomCStoreProvider.OnCStoreRequestException(string tempFileName, Exception e) { }
+        void IDicomCStoreProvider.OnCStoreRequestException(string tempFileName, Exception e)
+        {
+        }
 
         public Func<DicomCStoreRequest, DicomStatus> OnCStoreRequest { get; set; }
     }

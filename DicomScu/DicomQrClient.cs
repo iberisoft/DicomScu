@@ -9,7 +9,9 @@ namespace DicomScu
     public class DicomQrClient : DicomBaseClient
     {
         public DicomQrClient(string serverHost, int serverPort, string serverAeTitle, string clientAeTitle)
-            : base(serverHost, serverPort, serverAeTitle, clientAeTitle) { }
+            : base(serverHost, serverPort, serverAeTitle, clientAeTitle)
+        {
+        }
 
         public static DicomCFindRequest CreateStudyQueryRequest(IDicomQuery query)
         {

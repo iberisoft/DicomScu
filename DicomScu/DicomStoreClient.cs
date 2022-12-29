@@ -8,7 +8,9 @@ namespace DicomScu
     public class DicomStoreClient : DicomBaseClient
     {
         public DicomStoreClient(string serverHost, int serverPort, string serverAeTitle, string clientAeTitle)
-            : base(serverHost, serverPort, serverAeTitle, clientAeTitle) { }
+            : base(serverHost, serverPort, serverAeTitle, clientAeTitle)
+        {
+        }
 
         public async Task StoreAsync(IEnumerable<DicomFile> files)
         {
